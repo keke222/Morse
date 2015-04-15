@@ -1,0 +1,35 @@
+        <key>VoiceAttributes</key>
+	<dict>
+		<key>VoiceSynthesizerNumericID</key>
+		<integer>1836020339</integer>
+		<key>VoiceNumericID</key>
+		<integer>333</integer>
+		<key>VoiceVersion</key> <integer>1</integer>
+		<key>VoiceName</key> <string>Samuel</string>
+		<key>VoiceDemoText</key> <string>SOS I am trapped inside this computer!</string>
+		<key>VoiceGender</key> <string>VoiceGenderMale</string>
+		<key>VoiceAge</key> <integer>220</integer>
+		<key>VoiceLocaleIdentifier</key> <string>en_US</string>
+                <key>VoiceSupportedCharacters</key>
+                <array>
+                        <dict>
+                                <key>UnicodeCharBegin</key><integer>33</integer>
+                                <key>UnicodeCharEnd</key><integer>126</integer>
+                        </dict>
+                        <dict>
+                                <key>UnicodeCharBegin</key><integer>192</integer>
+                                <key>UnicodeCharEnd</key><integer>255</integer>
+                        </dict>
+                </array>
+                <key>VoiceIndividuallySpokenCharacters</key>
+                <array>
+                        <dict>
+                                <key>UnicodeCharBegin</key><integer>33</integer>
+                                <key>UnicodeCharEnd</key><integer>126</integer>
+                        </dict>
+                        <dict>
+                                <key>UnicodeCharBegin</key><integer>192</integer>
+                                <key>UnicodeCharEnd</key><integer>255</integer>
+                        </dict>
+                </array>
+	</dict>
