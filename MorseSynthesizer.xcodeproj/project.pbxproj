@@ -215,6 +215,7 @@
 		95E7D6F113B3D2940053E016 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Apple Computer";
 			};
 			buildConfigurationList = 95E7D6F413B3D2940053E016 /* Build configuration list for PBXProject "MorseSynthesizer" */;
@@ -382,7 +383,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MorseSynthesizer/MorseSynthesizer-Prefix.pch";
 				INFOPLIST_FILE = "MorseSynthesizer/MorseSynthesizer-Info.plist";
@@ -396,7 +396,6 @@
 		95E7D70A13B3D2940053E016 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MorseSynthesizer/MorseSynthesizer-Prefix.pch";
 				INFOPLIST_FILE = "MorseSynthesizer/MorseSynthesizer-Info.plist";

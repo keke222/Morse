@@ -48,7 +48,7 @@
 # Copyright (C) 2011 Apple Inc. All Rights Reserved.
 #
 
-require 'ftools'
+require 'fileutils'
 
 GENDER = {
   :neuter => 0,
@@ -115,8 +115,14 @@ def characterSet(set)
    end.join("") + ("\n%16s</array>" % [""])
 end
 
-File.makedirs(File.dirname(ARGV[1]))
-File.open(ARGV[1], 'w') do |OUT|
+#
+# Check if directory exist before creating it
+#
+if !Dir.exist?(File.dirname(ARGV[1]))
+    FileUtils.mkdir(File.dirname(ARGV[1]))
+end
+
+File.open(ARGV[1], 'w') do |out|
   if $GENERATE_BINARY
     if script > 32767
       longScript = script
@@ -124,10 +130,23 @@ File.open(ARGV[1], 'w') do |OUT|
     else
       longScript = 0
     end
-    OUT.print [0x016a, voice_creator, voice_id, version, name.length, name, demo_text.length, demo_text, 
+    out.print [0x016a, voice_creator, voice_id, version, name.length, name, demo_text.length, demo_text,
                gender, age, script, language, region, longScript, 0, 0, 0].pack('N A4A4 N Ca63 Ca255 nnnnn NNNN')
   else
-    OUT.print <<END
+    # Convert these variables into strings
+    voice_creator = voice_creator.unpack('N').inspect()
+    voice_id = voice_id.unpack('N').inspect()
+  
+    # If it starts with a '[' we delete brackets
+    if voice_creator.start_with?('[')
+        voice_creator = voice_creator.delete('[]')
+    end
+  
+    if voice_id.start_with?('[')
+        voice_id = voice_id.delete('[]')
+    end
+    
+    out.print <<END
         <key>VoiceAttributes</key>
 	<dict>
 		<key>VoiceSynthesizerNumericID</key>
