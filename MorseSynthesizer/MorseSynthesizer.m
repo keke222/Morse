@@ -130,7 +130,7 @@ Copyright (C) 2011 Apple Inc. All Rights Reserved.
 		generateSamples= dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
 		dispatch_source_set_event_handler(generateSamples, ^{ [self generateMorseAudio]; });
 		dispatch_resume(generateSamples);
-		dispatch_source_set_timer(generateSamples, DISPATCH_TIME_NOW, (audioFileRef ? 1ull : 10ull)*1000*1000, 5ull*1000*1000);
+		dispatch_source_set_timer(generateSamples, DISPATCH_TIME_NOW, (audioFileRef ? 1ull : 10ull)*NSEC_PER_SEC, 5ull*NSEC_PER_SEC);
 	}
 }
 
